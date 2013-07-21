@@ -63,27 +63,29 @@ if (isset($_POST['submit'])) {
     <head>
         <title>Archives</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
         <div id="login">
-            <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post"> 
-                <table border="0"> 
-                    <tr>
-                        <td colspan=2><h4>Login</h4></td>
-                    </tr> 
-                    <tr>
-                        <td>Username:</td>
-                        <td> <input type="text" name="username" maxlength="40"> </td>
-                    </tr> 
-                    <tr>
-                        <td>Password:</td>
-                        <td> <input type="password" name="pass" maxlength="50"> </td>
-                    </tr> 
-                    <tr>
-                        <td colspan="2" align="right"> <input type="submit" name="submit" value="Login"> </td>
-                    </tr> 
-                </table> 
+            <form class="contact_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="login_form"> 
+                <ul>
+                    <li>
+                        <h2>Login Account</h2>
+                        <span class="required_notification">* Required Field</span>
+                    </li>
+                    <li>
+                        <label for="name">Pen Name:</label>
+                        <input type="text" name="username" placeholder="Enter pen name" required />
+                    </li>
+                    <li>
+                        <label for="password">Password:</label>
+                        <input type="password" name="pass" placeholder="Password" required />
+                    </li>
+                    <li>
+                        <button class="submit" type="submit" name="submit">Login</button>
+<!--                        <input type="submit" name="submit" value="Register" class="submit">-->
+                    </li>
+                </ul>
             </form> 
         </div>
     </body>
