@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 // Connects to your Database 
 include('connect.php');
@@ -20,7 +21,7 @@ if (isset($_POST['submit'])) {
     if ($check2 != 0) {
         die('Sorry, the username ' . $_POST['username'] . ' is already in use.');
     }
-    
+
     // checks if the blog title is in use
     $titlecheck = $_POST['title'];
     $check3 = mysql_query("SELECT author FROM main WHERE title = '$titlecheck'") or die(mysql_error());
@@ -58,43 +59,47 @@ if (isset($_POST['submit'])) {
     ?>
     <html>
         <head>
-            <title>Archives</title>
+            <!--        <meta charset="utf-8">-->
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <link rel="stylesheet" type="text/css" href="index.css">
+            <title>Register Form</title>
+            <!--        <link rel="stylesheet" media="screen" href="styles.css" >-->
+            <link rel="stylesheet" type="text/css" href="styles.css">
         </head>
         <body>
-            <div id="register">
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                    <table border="0">
-                        <tr>
-                            <td colspan=2><h4>Register Account</h4></td>
-                        </tr> 
-                        <tr>
-                            <td>Pen Name:</td>
-                            <td> <input type="text" name="username" maxlength="60"></td>
-                        </tr>
-                        <tr>
-                            <td>Password:</td>
-                            <td><input type="password" name="pass" maxlength="10"></td>
-                        </tr>
-                        <tr>
-                            <td>Confirm Password:</td>
-                            <td><input type="password" name="pass2" maxlength="10"></td>
-                        </tr>
-                        <tr>
-                            <td>Blog Title:</td>
-                            <td> <input type="text" name="title" maxlength="60"></td>
-                        </tr>
-                        <tr>
-                            <td>What will your blog be about?</td>
-                            <td> <input type="text" name="about" maxlength="60"></td>
-                        </tr>
-                        <tr>
-                            <th colspan=2><input type="submit" name="submit" value="Register"></th>
-                        </tr> 
-                    </table>
-                </form>
-            </div>
+            <form class="contact_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="register_form">
+                <ul>
+                    <li>
+                        <h2>Register Account</h2>
+                        <span class="required_notification">* Required Field</span>
+                    </li>
+                    <li>
+                        <label for="name">Pen Name:</label>
+                        <input type="text"  name="username" placeholder="User name" required />
+                    </li>
+                    <li>
+                        <label for="password">Password:</label>
+                        <input type="password" name="pass" placeholder="Password" required />
+                    </li>
+                    <li>
+                        <label for="password">Confirm Password:</label>
+                        <input type="password" name="pass2" placeholder="Password" required />
+                        <span class="form_hint">Passwords have to match</span>
+                    </li>
+                    <li>
+                        <label for="title">Blog Title:</label>
+                        <input type="text"  name="title" placeholder="Title" required />
+                    </li>
+                    <li>
+                        <label for="message">Description:</label>
+                        <textarea name="about" cols="40" rows="6" required ></textarea>
+                        <span class="form_hint">What will your blog be about?</span>
+                    </li>
+                    <li>
+                        <button class="submit" type="submit" name="submit">Register</button>
+<!--                        <input type="submit" name="submit" value="Register" class="submit">-->
+                    </li>
+                </ul>
+            </form>
         </body>
     </html>
     <?php
