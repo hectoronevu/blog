@@ -33,13 +33,9 @@
                     echo "<a href=index.php>Main page</a> <br />";
                     echo "<a href=logout.php>Logout</a> <br /> <br />";
                     $author;
+                    // this is for blog title
                     $main = mysql_query("SELECT * FROM main WHERE blogID = '$memberID'");
                     while ($row = mysql_fetch_array($main)) {
-//                if (isset($_COOKIE['ID_my_site'])) {
-//                    echo "<a href=comments.php?postID=" . $row['postID'] . ">" . $row['title'] . "</a>";
-//                } else {
-//                    echo $row['title'];
-//                }
                         $author = $row['author'];
                         echo $row['title'];
                         $time;
@@ -52,7 +48,8 @@
                         echo $row['about'];
                         echo "<br /><br />";
                     }
-                    $result = mysql_query("SELECT * FROM posts WHERE blogID = '$memberID'");
+                    // this is to show all posts
+                    $result = mysql_query("SELECT * FROM posts WHERE blogID = '$memberID' ORDER BY date DESC");
                     while ($row = mysql_fetch_array($result)) {
                         global $postID;
                         $postID = $row['postID'];
@@ -67,7 +64,7 @@
                         while ($cur = mysql_fetch_array($comment)) {
                             $counter++;
                         }
-                        echo "with " . $counter . " comments";
+                        echo " with <b>" . $counter . "</b> comments";
                         echo "<br />";
                         echo $row['content'];
                         echo "<br /><br />";
