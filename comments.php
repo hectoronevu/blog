@@ -2,7 +2,7 @@
     <head>
         <title>Comments</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <div id="body">
@@ -25,42 +25,15 @@
                         }
                         //otherwise they are shown the admin area   
                         else {
-                            include('commentsII.php');
-//                        </div>      
-//                        <div id="post_section">                 
-//                            <h3>
-//                                Post
-//                            </h3>  
-//                        </div>
-//                        <div id="comment_section">
-//                            <h3>
-//                                Comments
-//                            </h3>
-//            <!--                                    <span class="required_notification">* Required Field</span>-->
-//                        </div>
-/*                             echo "Welcome " . $username . "<p>"; */
-/*                             echo "<a href=index.php>Main page</a> <br />"; */
-/*                             echo "<a href=logout.php>Logout</a> <br /> <br />"; */
                             $postID;
-                            if(isset($_GET['postID'])){
+                            if (isset($_GET['postID'])) {
                                 $postID = $_GET['postID'];
-                            }else{
+                            } else {
                                 $postID = $_POST['postID'];
                             }
-                            
-                            /*
+                            include('commentsII.php');
 
-							$current = mysql_query("SELECT * FROM posts WHERE postID = '$postID'");
-                            while ($row = mysql_fetch_array($current)) {
-                                echo $row['title'];
-                                echo " on " . $row['date'];
-                                echo "<br />";
-                                echo $row['content'];
-                                echo "<br /><br />";
-                            }
-*/
-
-                            $result = mysql_query("SELECT * FROM comments WHERE postID = '$postID'");
+                            $result = mysql_query("SELECT * FROM comments WHERE postID = '$postID' ORDER BY date DESC");
                             include('commentsIV.php');
 //                            $result = mysql_query("SELECT * FROM comments WHERE postID = '$postID'");
 //                            echo "<a href=commentsII.php?postID=" . $_GET['postID'] . ">Comment</a>";
@@ -83,8 +56,8 @@
  			VALUES ('" . $_POST['postID'] . "', '" . $username . "', '" . $_POST['content'] . "', '" . $mysqltime . "')";
 
                     $add_post = mysql_query($insert);
-                    echo $username . " on " . $mysqltime . "<br />";
-                    echo $_POST['content'] . "<br /><br />";
+//                    echo $username . " on " . $mysqltime . "<br />";
+//                    echo $_POST['content'] . "<br /><br />";
                 }
                 ?>
             </div>
