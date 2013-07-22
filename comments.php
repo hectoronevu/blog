@@ -2,10 +2,10 @@
     <head>
         <title>Archives</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-    	<div id="body">
+		<div id="body">
 			<div id="comments_blogs">
 				<?php
 					// Connects to your Database 
@@ -39,13 +39,10 @@
                     </h3>
                  </div>
                     <?php
+                    error_reporting(0);
                     $result = mysql_query("SELECT * FROM comments WHERE postID = '$_GET[postID]'");
                     while ($row = mysql_fetch_array($result)) {
-                        echo $row['author'];
-                        echo " on " . $row['date'];
-                        echo "<br />";
-                        echo $row['content'];
-                        echo "<br /><br />";
+                        include('commentsIII.php');
                     }
                 }
             }
