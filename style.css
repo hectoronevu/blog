@@ -261,6 +261,7 @@ background-color: rgba(176,175,175,0.41);
 /* left: 200px; */
 left:25%;
 margin: 0 auto;
+top: 0;
 /* position: absolute; */
 width: 950px;
 height: 1000px;
@@ -268,7 +269,7 @@ overflow: hidden;
 background-image:url('pen.png');
 background-position:center bottom;
 font-family: Helvetica;
-overflow: scroll;
+/* overflow: scroll; */
 }
 
 #bodyII
@@ -312,7 +313,7 @@ left: 0px;
 width:100%;
 z-index: 999;
 font-size: 12;
-height: 20	px;
+height: 20px;
 /* margin-left:70%;  */
 /* left: 850px; */
 }
@@ -322,12 +323,12 @@ height: 20	px;
 {
 margin: 0 auto;
 /* position:fixed; */
-/* border: 1px solid; */
+/* border: 2px solid; */
 /* background-color: #960808; */
 top: 0px;
 left: 0px;
 width:950px;
-z-index: 1;
+z-index: 999;
 font-size: 12;
 text-align: right;
 /* margin-left:70%;  */
@@ -465,8 +466,81 @@ height: auto;
 overflow: scroll;
 }
 
+/*members.php*/
+#subject
+{
+margin: 0 auto;
+position: relative;
+/* border: 2px solid; */
+top:300px;
+/* background-color: #d9d9d9;	 */
+}
 
 
+/*members.php*/
+#members_welcome
+{
+/* border: 2px solid; */
+position: absolute;
+width:100%;
+height: 150px;
+top:0;
+left: 0;
+z-index: 0;
+background-color: #9e1111;
+}
+
+/*members.php*/
+#members_login
+{
+margin: auto;
+/* border: 2px solid; */
+background-color: #960808;
+/* top:300px; */
+top:0;
+width: 950px;;
+height: 20px;
+z-index: 10;
+text-align: right;
+font-family: Helvetica;
+}
+
+/*members.php*/
+#members_main
+{
+position: fixed;
+/* margin: auto; */
+/* border: 2px solid; */
+top:0;
+width: 950px;
+font-family: Helvetica;
+z-index: 9;
+text-align: left;
+}
+
+/*members.php*/
+#your_home
+{
+/* border: 2px solid; */
+position: fixed;
+top:50px;
+font-family: Helvetica;
+font-size: 30px;
+width: 100%;
+text-align: center;
+font-family: fantasy
+}
+
+
+#members_comment
+{
+/* border: 2px solid; */
+/* margin: 0 auto; */
+position: relative;
+width: 100%;
+top:150px;
+text-align: center;
+}
 
 a.a1:link {color:gold;} 
 a.a1:active {color:gold;}
