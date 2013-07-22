@@ -25,8 +25,8 @@
                         }
                         //otherwise they are shown the admin area   
                         else {
-//                            include('commentsII.php');
-//                        </div>	  
+                            include('commentsII.php');
+//                        </div>      
 //                        <div id="post_section">                 
 //                            <h3>
 //                                Post
@@ -38,9 +38,9 @@
 //                            </h3>
 //            <!--                                    <span class="required_notification">* Required Field</span>-->
 //                        </div>
-                            echo "Welcome " . $username . "<p>";
-                            echo "<a href=index.php>Main page</a> <br />";
-                            echo "<a href=logout.php>Logout</a> <br /> <br />";
+/*                             echo "Welcome " . $username . "<p>"; */
+/*                             echo "<a href=index.php>Main page</a> <br />"; */
+/*                             echo "<a href=logout.php>Logout</a> <br /> <br />"; */
                             $postID;
                             if(isset($_GET['postID'])){
                                 $postID = $_GET['postID'];
@@ -50,11 +50,11 @@
                             
                             $current = mysql_query("SELECT * FROM posts WHERE postID = '$postID'");
                             while ($row = mysql_fetch_array($current)) {
-                                echo $row['title'];
-                                echo " on " . $row['date'];
-                                echo "<br />";
-                                echo $row['content'];
-                                echo "<br /><br />";
+/*                                 echo $row['title']; */
+/*                                 echo " on " . $row['date']; */
+/*                                 echo "<br />"; */
+/*                                 echo $row['content']; */
+/*                                 echo "<br /><br />"; */
                             }
                             $result = mysql_query("SELECT * FROM comments WHERE postID = '$postID'");
 //                            $result = mysql_query("SELECT * FROM comments WHERE postID = '$postID'");
