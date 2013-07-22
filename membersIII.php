@@ -1,5 +1,5 @@
 <div id="members_comment">
-  <?php
+	<?php
 		echo "<a href=comments.php?postID=" . $postID . ">" . $row['title'] . "</a>";
 		echo " on " . $row['date'];
 		echo "<br />";
