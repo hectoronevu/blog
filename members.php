@@ -2,9 +2,9 @@
     <head>
         <!--        <meta charset="utf-8">-->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Register Form</title>
+        <title>Members</title>
         <!--        <link rel="stylesheet" media="screen" href="styles.css" >-->
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <?php
@@ -28,19 +28,29 @@
                 }
                 //otherwise they are shown the admin area     
                 else {
-                        include('membersII.php');
-                    	
+                    echo "Welcome " . $username . "<p>";
+                    echo "Your Home:<p>";
+                    echo "<a href=index.php>Main page</a> <br />";
+                    echo "<a href=logout.php>Logout</a> <br /> <br />";
                     $result = mysql_query("SELECT * FROM posts WHERE blogID = '$memberID'");
                     while ($row = mysql_fetch_array($result)) {
+                        global $postID;
+                        $postID = $row['postID'];
                         if (isset($_COOKIE['ID_my_site'])) {
-                            global $postID;
-                            $postID = $row['postID'];
-                            include('membersIII.php');
+                            echo "<a href=comments.php?postID=" . $postID . ">" . $row['title'] . "</a>";
                         } else {
                             echo $row['title'];
                         }
-//                echo $row['title'];
-/*                         include('membersIII.php'); */
+                        echo " on " . $row['date'];
+                        $counter = 0;
+                        $comment = mysql_query("SELECT * FROM comments WHERE postID = '$postID'");
+                        while ($cur = mysql_fetch_array($comment)) {
+                            $counter++;
+                        }
+                        echo "with " . $counter . " comments";
+                        echo "<br />";
+                        echo $row['content'];
+                        echo "<br /><br />";
                     }
                 }
             }
@@ -65,9 +75,7 @@
             echo " on " . $mysqltime . "<br />";
             echo $_POST['content'] . "<br /><br />";
         }
-        ?>
-        <div id="body"> 
-        <div id="subject">
+        ?> 
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="contact_form" name="members_form"> 
             <ul>
                 <li>
@@ -84,12 +92,10 @@
         <!--            <input type="password" name="pass" placeholder="Password" required />-->
                 </li>
                 <li>
-                    <button class="submit" type="submit" name="submit">Submit</button>
+                    <button class="submit" type="submit" name="submit">Post</button>
         <!--                        <input type="submit" name="submit" value="Register" class="submit">-->
                 </li>
-            </ul>  
+            </ul>
         </form> 
-       </div>
-       </div>
     </body>
 </html>
