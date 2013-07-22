@@ -2,7 +2,6 @@
 // Connects to your Database 
 include('connect.php');
 include('loginII.php');
-
 //Checks if there is a login cookie 
 
 if (isset($_COOKIE['ID_my_site'])) {
@@ -10,10 +9,11 @@ if (isset($_COOKIE['ID_my_site'])) {
 //if there is, it logs you in and directes you to the members page 
     $username = $_COOKIE['ID_my_site'];
     $pass = $_COOKIE['Key_my_site'];
-    $check = mysql_query("SELECT * FROM main WHERE author = '$username'") or die(mysql_error());
+    $check = mysql_query("SELECT * FROM main WHERE author = '$username'") or die('Sorry, username does not exist. Click here to <a href="registration.php">register</a>');
     while ($info = mysql_fetch_array($check)) {
         if ($pass != $info['password']) {
-            
+            die('Sorry, password does not match.');
+            header("Location: index.php");
         } else {
             header("Location: members.php");
         }
@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
     //Gives error if user dosen't exist
     $check2 = mysql_num_rows($check);
     if ($check2 == 0) {
-        die('That user does not exist in our database. <a href=registration.php>Click Here to Register</a>');
+        die('That user does not exist in our database. Click here to <a href="registration.php">register</a>');
     }
     while ($info = mysql_fetch_array($check)) {
         $_POST['pass'] = stripslashes($_POST['pass']);
@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
 
         //gives error if the password is wrong
         if ($_POST['pass'] != $info['password']) {
-            die('Incorrect password, please try again.');
+            die('Incorrect password, please try again. Click here to the <a href="index.php">main</a> page.');
         } else { // if login is ok then we add a cookie      
             $_POST['username'] = stripslashes($_POST['username']);
             $hour = time() + 3600;
@@ -67,8 +67,7 @@ if (isset($_POST['submit'])) {
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <div id="body">
-            <div id="login_account">
+        <div id="login">
             <form class="contact_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="login_form"> 
                 <ul>
                     <li>
@@ -85,11 +84,10 @@ if (isset($_POST['submit'])) {
                     </li>
                     <li>
                         <button class="submit" type="submit" name="submit">Login</button>
-<!--                        <input type="submit" name="submit" value="Register" class="submit"> -->
+<!--                        <input type="submit" name="submit" value="Register" class="submit">-->
                     </li>
                 </ul>
             </form> 
-        	</div>
         </div>
     </body>
 </html>
