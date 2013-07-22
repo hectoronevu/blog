@@ -35,9 +35,16 @@ if (isset($_POST['submit'])) {
 
     // this makes sure both passwords entered match
     if ($_POST['pass'] != $_POST['pass2']) {
-        die('Your passwords did not match. ');
+        die('Your passwords did not match. Go back and try again.');
     }
 
+    // checks if username and password lengths are appropriate
+    if (strlen($_POST['username']) > 50) {
+        die('Sorry, your username is more than 50 characters');
+    }
+    if (strlen($_POST['title']) > 50) {
+        die('Sorry, your blog title is more than 50 characters');
+    }
     // here we encrypt the password and add slashes if needed
     $_POST['pass'] = md5($_POST['pass']);
     if (!get_magic_quotes_gpc()) {
@@ -47,7 +54,7 @@ if (isset($_POST['submit'])) {
     // now we insert it into the database
     $insert = "INSERT INTO main (author, password, title, about)
 
-         	VALUES ('" . $_POST['username'] . "', '" . $_POST['pass'] . "', '" . $_POST['title'] . "', '" . $_POST['about'] . "')";
+ 			VALUES ('" . $_POST['username'] . "', '" . $_POST['pass'] . "', '" . $_POST['title'] . "', '" . $_POST['about'] . "')";
 
     $add_member = mysql_query($insert);
     ?>
@@ -67,44 +74,44 @@ if (isset($_POST['submit'])) {
             <link rel="stylesheet" type="text/css" href="styles.css">
         </head>
         <body>
-        	<div id="body">
-        		<div id="login_account">
-	            <form class="contact_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="register_form">
-        	        <ul>
-    	                <li>
-	                        <h2>Register Account</h2>
-                        	<span class="required_notification">* Required Field</span>
-						</li>
-    	                <li>
-	                        <label for="name">Pen Name:</label>
-                        	<input type="text"  name="username" placeholder="User name" required />
-						</li>
-    	                <li>
-	                        <label for="password">Password:</label>
-                        	<input type="password" name="pass" placeholder="Password" required />
-						</li>
-        	            <li>
-    	                    <label for="password">Confirm Password:</label>
-	                        <input type="password" name="pass2" placeholder="Password" required />
-                        	<span class="form_hint">Passwords have to match</span>
-						</li>
-    	                <li>
-	                        <label for="title">Blog Title:</label>
-                        	<input type="text"  name="title" placeholder="Title" required />
-						</li>
-        	            <li>
-    	                    <label for="message">Description:</label>
-	                        <textarea name="about" cols="40" rows="6" required ></textarea>
-                        	<span class="form_hint">What will your blog be about?</span>
-						</li>
-        	            <li>
-    	                    <button class="submit" type="submit" name="submit">Register</button>
-<!--                        <input type="submit" name="submit" value="Register" class="submit">-->
-	                    </li>
-						</ul>
-					</form>
-        		</div>
-        	</div>
+            <div id="body">
+                <div id="login_account">
+                    <form class="contact_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="register_form">
+                        <ul>
+                            <li>
+                                <h2>Register Account</h2>
+                                <span class="required_notification">* Required Field</span>
+                            </li>
+                            <li>
+                                <label for="name">Pen Name:</label>
+                                <input type="text"  name="username" placeholder="User name" required />
+                            </li>
+                            <li>
+                                <label for="password">Password:</label>
+                                <input type="password" name="pass" placeholder="Password" required />
+                            </li>
+                            <li>
+                                <label for="password">Confirm Password:</label>
+                                <input type="password" name="pass2" placeholder="Password" required />
+                                <span class="form_hint">Passwords have to match</span>
+                            </li>
+                            <li>
+                                <label for="title">Blog Title:</label>
+                                <input type="text"  name="title" placeholder="Title" required />
+                            </li>
+                            <li>
+                                <label for="message">Description:</label>
+                                <textarea name="about" cols="40" rows="6" required ></textarea>
+                                <span class="form_hint">What will your blog be about?</span>
+                            </li>
+                            <li>
+                                <button class="submit" type="submit" name="submit">Register</button>
+        <!--                        <input type="submit" name="submit" value="Register" class="submit">-->
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
         </body>
     </html>
     <?php
