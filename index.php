@@ -1,23 +1,25 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <title>Archives</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="styles.css">
-    </head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&amp;effect=3d-float">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&amp;effect=shadow-multiple">
+ </head>
     <body>
         <div id="welcome_message">
-            <h1>
+             <h1 class="font-effect-3d-float" style="font-size: 50px">
                 Welcome to The Archives 
-            </h1>               
-            <h5>
+            </h1>
+ <h5 class="font-effect-3d-float">
                 We've been hosting the best blogs in the internet since 2013! <br />
-                The time is now <?php 
-                date_default_timezone_set('America/New_York'); 
+                The time is now <?php
+                date_default_timezone_set('America/New_York');
                 $mysqltime = date("Y-m-d H:i:s");
                 echo $mysqltime;?>
             </h5>
-            
+
             <div id="index_top">
                 <div id="index_login">
                     <?php
@@ -32,15 +34,15 @@
                             }
                     ?>
                 </div>
-            </div>          
-        </div>  
+            </div>
+        </div>
         <div id="body">
             <p>
-                            
+
             <!--            <a href="login.php">Login</a>,<a href="registration.php">Register</a>-->
             </p>
             <div id="recent_blogs">
-            <h3>Recent Blogs</h3>
+            <h3 class="font-effect-shadow-multiple" style="font-size: 30px">Recent Blogs</h3>
             <?php
                 error_reporting(0);
                 include('connect.php');
@@ -63,8 +65,8 @@
             }
 
             mysql_close($con);
-            ?>              
-            </div>  
+            ?>
+            </div>
          </div>
     </body>
 </html>
