@@ -1,6 +1,10 @@
+/* === Remove input autofocus webkit === */
 *:focus {outline: none;}
 
-body {font:14px/21px "Helvetica";}
+/* === Form Typography === */
+/*body {font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;}*/
+body {font: 14px/21px "Helvetica";}
+/*.contact_form h2, .contact_form label {font-family:Georgia, Times, "Times New Roman", serif;}*/
 .contact_form h2, .contact_form label {font-family:Helvetica;}
 .form_hint, .required_notification {font-size: 11px;}
 
@@ -71,7 +75,7 @@ body {font:14px/21px "Helvetica";}
 .contact_form input:required, .contact_form textarea:required {
 	background: #fff url(images/red_asterisk.png) no-repeat 98% center;
 }
-.coIntact_form input:required:valid, .contact_form textarea:required:valid {
+.contact_form input:required:valid, .contact_form textarea:required:valid {
 	background: #fff url(images/valid.png) no-repeat 98% center;
 	box-shadow: 0 0 5px #5cd053;
 	border-color: #28921f;
@@ -103,7 +107,7 @@ body {font:14px/21px "Helvetica";}
 .contact_form input:focus + .form_hint {display: inline;}
 .contact_form input:required:valid + .form_hint {background: #28921f;}
 .contact_form input:required:valid + .form_hint::before {color:#28921f;}
-
+	
 /* === Button Style === */
 button.submit {
 /*	background-color: #68b12f;*/
@@ -143,7 +147,7 @@ button.submit:active {
 	-moz-box-shadow: 0 0 10px 5px #960808 inset;
 	-ms-box-shadow: 0 0 10px 5px #960808 inset;
 	-o-box-shadow: 0 0 10px 5px #960808 inset;
-
+	
 }
 h1
 {
@@ -166,20 +170,15 @@ font-size: 16px;
 color: #837A7A;
 }
 
- /*body
-  {
-  background-image:url('http://i42.tinypic.com/2cxwbac.png');
-  font-size: 12px;
-  font-family: Helvetica;
-  }
- */
-
-#login
+/*
+body
 {
-position: relative;
-text-align: left;
-/* border: 1 solid; */
+background-image:url('http://i44.tinypic.com/mw5ksj.png');
+font-size: 12px;
+font-family: Helvetica;
 }
+*/
+
 
 #register
 {
@@ -261,7 +260,7 @@ top: 0;
 width: 950px;
 height: 1000px;
 overflow: hidden;
-background-image:url('http://i42.tinypic.com/51sy07.png');
+background-image:url('pen.png');
 background-position:center bottom;
 font-family: Helvetica;
 /* overflow: scroll; */
@@ -324,9 +323,7 @@ top: 0px;
 left: 0px;
 width:950px;
 z-index: 999;
-font-size: 14px;
-font-family: Arial;
-font-weight: bold;
+font-size: 12;
 text-align: right;
 /* margin-left:70%;  */
 /* left: 850px; */
@@ -335,8 +332,7 @@ text-align: right;
 /*index.php*/
 #recent_blogs
 {
-font-family: Arial;
-font-size: 16px;
+font-family: Helvetica;
 position: relative;
 /* border: 1px solid; */
 top:200px;
@@ -540,9 +536,43 @@ top:150px;
 text-align: center;
 }
 
+/*login.php*/
+#login
+{
+position: relative;
+text-align: left;
+/* border: 1 solid; */
+}
+
+/*login.php*/
+#login_account
+{
+/* border: 2px solid; */
+position: fixed;
+top:300px;
+}
+
+
+
 a.a1:link {color:gold;} 
 a.a1:active {color:gold;}
 a.a1:visited {color:gold;} 
 a.a1:link {text-decoration:none;}
 a.a1:visited {text-decoration:none;}
 a.a1:active {text-decoration:underline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
