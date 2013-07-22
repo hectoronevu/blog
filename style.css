@@ -1,10 +1,6 @@
-/* === Remove input autofocus webkit === */
 *:focus {outline: none;}
 
-/* === Form Typography === */
-/*body {font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;}*/
-body {font: 14px/21px "Helvetica";}
-/*.contact_form h2, .contact_form label {font-family:Georgia, Times, "Times New Roman", serif;}*/
+body {font:14px/21px "Helvetica";}
 .contact_form h2, .contact_form label {font-family:Helvetica;}
 .form_hint, .required_notification {font-size: 11px;}
 
@@ -75,7 +71,7 @@ body {font: 14px/21px "Helvetica";}
 .contact_form input:required, .contact_form textarea:required {
 	background: #fff url(images/red_asterisk.png) no-repeat 98% center;
 }
-.contact_form input:required:valid, .contact_form textarea:required:valid {
+.coIntact_form input:required:valid, .contact_form textarea:required:valid {
 	background: #fff url(images/valid.png) no-repeat 98% center;
 	box-shadow: 0 0 5px #5cd053;
 	border-color: #28921f;
@@ -107,7 +103,7 @@ body {font: 14px/21px "Helvetica";}
 .contact_form input:focus + .form_hint {display: inline;}
 .contact_form input:required:valid + .form_hint {background: #28921f;}
 .contact_form input:required:valid + .form_hint::before {color:#28921f;}
-	
+
 /* === Button Style === */
 button.submit {
 /*	background-color: #68b12f;*/
@@ -147,7 +143,7 @@ button.submit:active {
 	-moz-box-shadow: 0 0 10px 5px #960808 inset;
 	-ms-box-shadow: 0 0 10px 5px #960808 inset;
 	-o-box-shadow: 0 0 10px 5px #960808 inset;
-	
+
 }
 h1
 {
@@ -170,14 +166,13 @@ font-size: 16px;
 color: #837A7A;
 }
 
-/*
-body
-{
-background-image:url('http://i44.tinypic.com/mw5ksj.png');
-font-size: 12px;
-font-family: Helvetica;
-}
-*/
+ /*body
+  {
+  background-image:url('http://i42.tinypic.com/2cxwbac.png');
+  font-size: 12px;
+  font-family: Helvetica;
+  }
+ */
 
 #login
 {
@@ -266,7 +261,7 @@ top: 0;
 width: 950px;
 height: 1000px;
 overflow: hidden;
-background-image:url('pen.png');
+background-image:url('http://i42.tinypic.com/51sy07.png');
 background-position:center bottom;
 font-family: Helvetica;
 /* overflow: scroll; */
@@ -329,7 +324,9 @@ top: 0px;
 left: 0px;
 width:950px;
 z-index: 999;
-font-size: 12;
+font-size: 14px;
+font-family: Arial;
+font-weight: bold;
 text-align: right;
 /* margin-left:70%;  */
 /* left: 850px; */
@@ -338,7 +335,8 @@ text-align: right;
 /*index.php*/
 #recent_blogs
 {
-font-family: Helvetica;
+font-family: Arial;
+font-size: 16px;
 position: relative;
 /* border: 1px solid; */
 top:200px;
@@ -548,19 +546,3 @@ a.a1:visited {color:gold;}
 a.a1:link {text-decoration:none;}
 a.a1:visited {text-decoration:none;}
 a.a1:active {text-decoration:underline;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
