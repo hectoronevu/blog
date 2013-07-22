@@ -22,14 +22,14 @@
     error_reporting(0);
     $current = mysql_query("SELECT * FROM posts WHERE postID = '$postID'");
     while ($row = mysql_fetch_array($current)) {
-        echo $row['title'];
+        echo "<b>".$row['title']."</b>";
         echo " on " . $row['date'];
         $counter = 0;
         $comment = mysql_query("SELECT * FROM comments WHERE postID = '$postID'");
         while ($cur = mysql_fetch_array($comment)) {
             $counter++;
         }
-        echo " with " . $counter . " comments";
+        echo " with <b>" . $counter . "</b> comments";
         echo "<br />";
         echo $row['content'];
         echo "<br /><br />";
