@@ -1,6 +1,7 @@
 <?php
 // Connects to your Database 
 include('connect.php');
+date_default_timezone_set('America/New_York');
 //checks cookies to make sure they are logged in 
 
 if (isset($_COOKIE['ID_my_site'])) {
@@ -15,21 +16,29 @@ if (isset($_COOKIE['ID_my_site'])) {
         }
         //otherwise they are shown the admin area     
         else {
+            $author;
             echo "Welcome " . $username . "<p>";
             echo "<a href=index.php>Main page</a> <br />";
             echo "<a href=logout.php>Logout</a> <br /> <br />";
-//            $comment= mysql_query("SELECT * FROM comments WHERE blogID = '$_GET[blogID]'");
-//            while ($row = mysql_fetch_array($comment)) {
+            $main= mysql_query("SELECT * FROM main WHERE blogID = '$_GET[blogID]'");
+            while ($row = mysql_fetch_array($main)) {
 //                if (isset($_COOKIE['ID_my_site'])) {
 //                    echo "<a href=comments.php?postID=" . $row['postID'] . ">" . $row['title'] . "</a>";
 //                } else {
 //                    echo $row['title'];
 //                }
-//                echo " on " . $row['date'];
-//                echo "<br />";
-//                echo $row['content'];
-//                echo "<br /><br />";
-//            }
+                $author = $row['author'];
+                echo $row['title'];
+                $time;
+                $temp = mysql_query("SELECT * FROM posts WHERE blogID = '$_GET[blogID]'");
+                while ($data = mysql_fetch_array($temp)) {
+                    $time=$data['date'];
+                }
+                echo " on " . $time;
+                echo "<br />";
+                echo $row['about'];
+                echo "<br /><br />";
+            }
             $result = mysql_query("SELECT * FROM posts WHERE blogID = '$_GET[blogID]'");
             while ($row = mysql_fetch_array($result)) {
                 if (isset($_COOKIE['ID_my_site'])) {
@@ -47,6 +56,8 @@ if (isset($_COOKIE['ID_my_site'])) {
                 echo "with " . $counter . " comments";
                 echo "<br />";
                 echo $row['content'];
+                echo "<br /> by ";
+                echo $author;
                 echo "<br /><br />";
             }
         }
