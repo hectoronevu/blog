@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Comments</title>
@@ -53,7 +54,7 @@
                     // now we insert it into the database
                     $insert = "INSERT INTO comments (postID, author, content, date)
 
- 			VALUES ('" . $_POST['postID'] . "', '" . $username . "', '" . $_POST['content'] . "', '" . $mysqltime . "')";
+     		VALUES ('" . $_POST['postID'] . "', '" . $username . "', '" . $_POST['content'] . "', '" . $mysqltime . "')";
 
                     $add_post = mysql_query($insert);
 //                    echo $username . " on " . $mysqltime . "<br />";
