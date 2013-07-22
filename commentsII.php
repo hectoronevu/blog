@@ -17,7 +17,6 @@
 </div>
 	
 <div id="comment_block">
-
 	<?php
 	error_reporting(0);
 	$current = mysql_query("SELECT * FROM posts WHERE postID = '$postID'");
@@ -30,3 +29,4 @@
 		}		
 	?>
 </div>
+	
