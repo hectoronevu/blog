@@ -418,7 +418,7 @@ height: 100px;
 margin: 0 auto;
 position: relative;
 overflow: scroll;
-top:80px;
+/* top:40px; */
 }
 
 /*comments.php*/
@@ -429,6 +429,18 @@ width: 950px;
 margin: 0 auto;
 position: relative;
 top:200px;
+}
+
+/*comments.php*/
+#comment_blockIV
+{
+/* border: 2px solid; */
+width: 950px;
+margin: 0 auto;
+height: 600px;
+position: relative;
+overflow: scroll;
+top:300px;
 }
 
 /*comments.php*/
