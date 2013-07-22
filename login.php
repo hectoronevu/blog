@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 // Connects to your Database 
 include('connect.php');
