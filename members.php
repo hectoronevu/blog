@@ -28,24 +28,19 @@
                 }
                 //otherwise they are shown the admin area     
                 else {
-                    echo "Welcome " . $username . "<p>";
-                    echo "Your Home:<p>";
-                    echo "<a href=index.php>Main page</a> <br />";
-                    echo "<a href=logout.php>Logout</a> <br /> <br />";
+                        include('membersII.php');
+                    	
                     $result = mysql_query("SELECT * FROM posts WHERE blogID = '$memberID'");
                     while ($row = mysql_fetch_array($result)) {
                         if (isset($_COOKIE['ID_my_site'])) {
                             global $postID;
                             $postID = $row['postID'];
-                            echo "<a href=comments.php?postID=" . $postID . ">" . $row['title'] . "</a>";
+                            include('membersIII.php');
                         } else {
                             echo $row['title'];
                         }
 //                echo $row['title'];
-                        echo " on " . $row['date'];
-                        echo "<br />";
-                        echo $row['content'];
-                        echo "<br /><br />";
+/*                         include('membersIII.php'); */
                     }
                 }
             }
@@ -70,7 +65,9 @@
             echo " on " . $mysqltime . "<br />";
             echo $_POST['content'] . "<br /><br />";
         }
-        ?> 
+        ?>
+        <div id="body"> 
+        <div id="subject">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="contact_form" name="members_form"> 
             <ul>
                 <li>
@@ -87,10 +84,12 @@
         <!--            <input type="password" name="pass" placeholder="Password" required />-->
                 </li>
                 <li>
-                    <button class="submit" type="submit" name="submit">Login</button>
+                    <button class="submit" type="submit" name="submit">Submit</button>
         <!--                        <input type="submit" name="submit" value="Register" class="submit">-->
                 </li>
-            </ul>
+            </ul>  
         </form> 
+       </div>
+       </div>
     </body>
 </html>
