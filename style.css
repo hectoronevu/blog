@@ -149,3 +149,344 @@ button.submit:active {
 	-o-box-shadow: 0 0 10px 5px #960808 inset;
 	
 }
+h1
+{
+font-family: Helvetica;
+text-align: center;
+font-size: 36px;
+}
+
+h4
+{
+font-family: Helvetica;
+font-size: 16px;
+}
+
+h5
+{
+font-family: Helvetica;
+text-align: center;
+font-size: 16px;
+color: #837A7A;
+}
+
+/*
+body
+{
+background-image:url('http://i44.tinypic.com/mw5ksj.png');
+font-size: 12px;
+font-family: Helvetica;
+}
+*/
+
+#login
+{
+position: relative;
+text-align: left;
+/* border: 1 solid; */
+}
+
+#register
+{
+position: relative;
+}
+
+#status 
+{
+font-family: Helvetica;
+font-size: 12;
+position:relative;
+float: right;
+/* border: 1 solid; */
+top: 10px;
+}
+
+#welcome
+{
+font-family: Helvetica;
+/* border: 1 solid; */
+position: relative;
+top:50px;
+/* left:50px; */
+font-size: 25px;
+text-align: start;
+}
+
+#message
+{
+font-family: Helvetica;
+border: 1 solid;
+/* width:500px; */
+position: relative;
+top:250px;
+left: 10px;
+}
+
+#login_widget
+{
+font-family: Helvetica;
+font-size: 12;
+position:relative;
+float: right;
+/* border: 1 solid; */
+top: 10px;
+}
+
+#create_blog
+{
+position: relative;
+/* left:400px; */
+top:150px;
+width: 200px;
+/* border: 1px solid; */
+}
+
+#recent
+{
+position: relative;
+top:115px;
+left:650px;
+/* float: right; */
+/* border: 1 solid; */
+width: auto;
+height: auto;
+}
+
+/*comments.php*/
+#body
+{
+/* border: 1px solid; */
+background-color: rgba(176,175,175,0.41);
+/* top:150px; */
+/* left: 200px; */
+left:25%;
+margin: 0 auto;
+/* position: absolute; */
+width: 950px;
+height: 1000px;
+overflow: hidden;
+background-image:url('pen.png');
+background-position:center bottom;
+font-family: Helvetica;
+overflow: scroll;
+}
+
+#bodyII
+{
+/* border: 1px solid; */
+background-color: rgba(176,175,176,0.41);
+/* left:20%; */
+top:150px;
+/* position: fixed; */
+margin: 0 auto;
+width: 950px;
+height: 100%;
+/* top: 200px; */
+overflow: hidden;
+background-image:url('pen.png');
+background-position:center bottom;
+font-family: Helvetica;
+}
+
+
+#welcome_message
+{
+position:fixed;
+/* border: 1px solid; */
+background-color: #9e1111;
+top: 0px;
+left: 0px;
+width: 100%;
+z-index: 999;
+height: 150px;
+}
+
+/*index.php*/
+#index_top
+{
+position:fixed;
+/* border: 1px solid; */
+background-color: #960808;
+top: 0px;
+left: 0px;
+width:100%;
+z-index: 999;
+font-size: 12;
+height: 20	px;
+/* margin-left:70%;  */
+/* left: 850px; */
+}
+
+/*index.php*/
+#index_login
+{
+margin: 0 auto;
+/* position:fixed; */
+/* border: 1px solid; */
+/* background-color: #960808; */
+top: 0px;
+left: 0px;
+width:950px;
+z-index: 1;
+font-size: 12;
+text-align: right;
+/* margin-left:70%;  */
+/* left: 850px; */
+}
+
+/*index.php*/
+#recent_blogs
+{
+font-family: Helvetica;
+position: relative;
+/* border: 1px solid; */
+top:200px;
+overflow:scroll;
+height: 600px;
+width: 400px;
+/* left:4no00px; */
+}
+
+/* comments.php */
+#comments_blogs
+{
+position:fixed;
+/* border: 1px solid; */
+background-color: #9e1111;
+top: 0px;
+left: 0px;
+width: 100%;
+z-index: 999;
+height: 60px;
+}
+
+/*comments.php*/
+#main_page
+{
+margin: 0 auto;
+/* position:fixed; */
+/* border: 2px solid; */
+/* top: 0px; */
+/* background-color: #960808; */
+/* left: 90%; */
+width:950px;
+/* z-index: 1; */
+font-size: 15;
+text-align: left;
+/* margin-top: -1.5%;  */
+/* left: 850px; */		
+}
+
+/*comments.php*/
+#archives
+{
+position:fixed;
+/* margin: 0 auto; */
+/* border: 2px solid; */
+/* background-color: #9e1111; */
+top: 10px;
+left: 50%;
+font-size: 40px;
+font-family: cursive;
+/* width: 100%; */
+z-index: 1;
+/* height: 50px; */
+
+}
+
+/*comments.php*/
+#logout_widget 
+{
+/* top: 10px; */
+margin: 0 auto;
+/* position:fixed; */
+/* border: 2px solid; */
+/* vertical-align: middle; */
+/* bottom: 10px; */
+/* background-color: #960808; */
+/* left: 90%; */
+width:950px;
+/* z-index: 1; */
+font-size: 15;
+text-align: right;
+/* margin-top: 2%;  */
+/* overflow: hidden; */
+/* left: 850px; */		
+}
+
+/*comments.php*/
+#comment_block
+{
+/* border: 2px solid; */
+width: 950px;
+height: 100px;
+margin: 0 auto;
+position: relative;
+overflow: scroll;
+top:80px;
+}
+
+/*comments.php*/
+#comment_blockII
+{
+/* border: 2px solid; */
+width: 950px;
+margin: 0 auto;
+position: relative;
+top:200px;
+}
+
+/*comments.php*/
+#post_section
+{
+/* border: 2px solid; */
+/* margin: 0 auto; */
+position: relative;
+top: 50px;	
+}
+
+/*comments.php*/
+#comment_section
+{
+/* border: 2px solid; */
+/* margin: 0 auto; */
+position: relative;
+top: 150px;	
+}
+
+/*commentsIII.php*/
+#posted_comments
+{
+/* border: 2px solid; */
+/* margin: 0 auto; */
+position: relative;
+top: 150px;
+height: auto;
+overflow: scroll;
+}
+
+
+
+
+a.a1:link {color:gold;} 
+a.a1:active {color:gold;}
+a.a1:visited {color:gold;} 
+a.a1:link {text-decoration:none;}
+a.a1:visited {text-decoration:none;}
+a.a1:active {text-decoration:underline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
