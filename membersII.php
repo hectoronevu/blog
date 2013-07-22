@@ -1,6 +1,6 @@
 
 <div id="members_welcome">
-  <div id="index_top">
+	<div id="index_top">
 		<div id="members_login">			
 			<?php
 				echo "Welcome " . $username ."&nbsp&nbsp&nbsp<a class='a1' href=logout.php>Logout</a>";		
