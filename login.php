@@ -1,6 +1,7 @@
 <?php
 // Connects to your Database 
 include('connect.php');
+include('loginII.php');
 
 //Checks if there is a login cookie 
 
@@ -66,7 +67,8 @@ if (isset($_POST['submit'])) {
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <div id="login">
+        <div id="body">
+            <div id="login_account">
             <form class="contact_form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="login_form"> 
                 <ul>
                     <li>
@@ -83,10 +85,11 @@ if (isset($_POST['submit'])) {
                     </li>
                     <li>
                         <button class="submit" type="submit" name="submit">Login</button>
-<!--                        <input type="submit" name="submit" value="Register" class="submit">-->
+<!--                        <input type="submit" name="submit" value="Register" class="submit"> -->
                     </li>
                 </ul>
             </form> 
+        	</div>
         </div>
     </body>
 </html>
