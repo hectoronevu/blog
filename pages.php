@@ -20,13 +20,9 @@ if (isset($_COOKIE['ID_my_site'])) {
             echo "Welcome " . $username . "<p>";
             echo "<a href=index.php>Main page</a> <br />";
             echo "<a href=logout.php>Logout</a> <br /> <br />";
+            //this is for the blog title
             $main= mysql_query("SELECT * FROM main WHERE blogID = '$_GET[blogID]'");
             while ($row = mysql_fetch_array($main)) {
-//                if (isset($_COOKIE['ID_my_site'])) {
-//                    echo "<a href=comments.php?postID=" . $row['postID'] . ">" . $row['title'] . "</a>";
-//                } else {
-//                    echo $row['title'];
-//                }
                 $author = $row['author'];
                 echo $row['title'];
                 $time;
@@ -39,7 +35,8 @@ if (isset($_COOKIE['ID_my_site'])) {
                 echo $row['about'];
                 echo "<br /><br />";
             }
-            $result = mysql_query("SELECT * FROM posts WHERE blogID = '$_GET[blogID]'");
+            // this is to show all the posts
+            $result = mysql_query("SELECT * FROM posts WHERE blogID = '$_GET[blogID]' ORDER BY date DESC");
             while ($row = mysql_fetch_array($result)) {
                 if (isset($_COOKIE['ID_my_site'])) {
                     echo "<a href=comments.php?postID=" . $row['postID'] . ">" . $row['title'] . "</a>";
@@ -53,7 +50,7 @@ if (isset($_COOKIE['ID_my_site'])) {
                 while ($cur = mysql_fetch_array($comment)) {
                     $counter++;
                 }
-                echo "with " . $counter . " comments";
+                echo " with <b>" . $counter . "</b> comments";
                 echo "<br />";
                 echo $row['content'];
                 echo "<br /> by ";
